@@ -1,0 +1,23 @@
+[project]
+name = "prod"
+version = "0.1.0"
+description = "Django apps"
+authors = [
+    {name = "alexander"}
+]
+readme = "README.md"
+requires-python = "3.12.3"
+dependencies = [
+    "django (>=5.2.1,<6.0.0)",
+    "djangorestframework (>=3.16.0,<4.0.0)",
+    "drf-spectacular (>=0.28.0,<0.29.0)",
+    "django-filter (>=25.1,<26.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "django-debug-toolbar (>=5.2.0,<6.0.0)",
+    "gunicorn (>=23.0.0,<24.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
