@@ -32,10 +32,20 @@ services:
       - "3000:3000"
 
   loki:
-    image: grafana/loki
+    image: grafana/loki:2.9.1
+    container_name: loki-1
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/loki-config.yaml
+    volumes:
+      - ./loki_data/chunks:/loki/chunks
+      - ./loki_data/index:/loki/index
+      - ./loki_data/cache:/loki/cache
+      - ./loki_data/wal:/loki/wal
+      - ./loki_data/compactor:/loki/compactor
+      - ./loki-config.yml:/etc/loki/loki-config.yml:ro
+    command: -config.file=/etc/loki/loki-config.yml
+    user: root
+
 
 volumes:
   postgres_data:
