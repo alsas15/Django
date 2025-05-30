@@ -5,7 +5,6 @@ description = "Django apps"
 authors = [
     {name = "alexander"}
 ]
-readme = "README.md"
 requires-python = "3.12.3"
 dependencies = [
     "django (>=5.2.1,<6.0.0)",
