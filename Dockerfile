@@ -4,6 +4,6 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install poetry && poetry config virtualenvs.create false
 WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
-RUN poetry install --without dev --no-interaction --no-ansi
+RUN poetry install --no-interaction --no-ansi
 COPY . /app/
 CMD ["gunicorn", "mysite.wsgi:application", "--bind", "0.0.0.0:8000"]
